@@ -173,17 +173,34 @@ main>nav a{border-radius:10px;font-size:15px;padding:8px 14px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.row .b{transition:none}}
 .row.sim{cursor:default}.row .gh{position:absolute;left:0;top:0;bottom:0;border-radius:8px;background:color-mix(in srgb,var(--mut) 28%,var(--card))}
 .row.sim .n{width:170px}@media (min-width:1200px){.wa{display:grid;grid-template-columns:repeat(5,1fr);gap:34px;padding:0 9px}.wa.r span{grid-column:5}.wa.l span{grid-column:1}.ws.rev{direction:rtl}.ws.rev .wb{direction:ltr}.ws.rev .wb:not(:last-child)::after{content:"←";right:auto;left:-25px}}#cx{margin-top:0}@media (max-width:620px){.row.sim .n{width:110px;font-size:13px}}
+.tab{flex:none;font:inherit;font-size:15px;font-weight:800;cursor:pointer;background:var(--card);border:2px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 16px}
+.tab[data-t=design]{--c:var(--navy)}.tab[data-t=report]{--c:var(--teal)}
+.tab:hover{border-color:var(--c)}.tab.on{background:var(--c);border-color:var(--c);color:#fff}.tab:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.links{display:contents}.links[data-tab=design]{--ac:var(--navy)}.links[data-tab=report]{--ac:var(--teal)}
+.links a{font-size:13.5px;font-weight:600;color:var(--mut);padding:5px 12px}
+.pane code{font-size:.92em;background:var(--sub);border-radius:4px;padding:1px 5px;overflow-wrap:anywhere}
+.pane pre{background:var(--sub);border:1px solid var(--line);border-radius:12px;padding:12px 16px;overflow-x:auto;font-size:14px;line-height:1.5}.pane pre code{background:none;padding:0;overflow-wrap:normal}
+.pill.p{background:var(--amber);color:var(--amber-ink)}
+.callout a{color:inherit;font-weight:700;text-decoration:underline}
+@media (min-width:1280px){
+main>nav{gap:8px}
+.tab{border-radius:12px;font-size:16px;padding:12px 16px;text-align:left;border-left:8px solid var(--c)}
+.links{display:flex;flex-direction:column;gap:2px;margin:0 0 8px 12px;padding-left:12px;border-left:3px solid var(--ac)}
+main>nav .links a{background:none;border:0;border-radius:8px;font-size:14.5px;font-weight:600;color:var(--mut);padding:6px 10px}
+main>nav .links a:hover,main>nav .links a:focus-visible{background:var(--soft);color:var(--head)}
+}
 </style>
 
 </head><body>
 <a href="https://bagusbernadi.github.io/" style="display:inline-block;margin:12px 16px;font:600 14px/1.4 'Source Sans 3',Arial,sans-serif;color:#1A73E8;text-decoration:none">← All projects / Semua project</a>
 <main>
-<nav aria-label="Section navigation"><a href="#s1">Background</a><a href="#s2">Business Questions</a><a href="#s3">Validation &amp; Anti-Bypass</a><a href="#s4">Dataset</a><a href="#s5">Tools</a><a href="#s6">Work Plan</a><a href="#s7">Project Outputs</a><a href="#s8">Success Criteria</a><a href="#s9">Assumptions &amp; Limitations</a></nav>
+<nav aria-label="Project navigation"><button type="button" class="tab on" data-t="design" aria-expanded="true" aria-controls="design">Design Project</button><div class="links" data-tab="design"><a href="#s1">Background</a><a href="#s2">Business Questions</a><a href="#s3">Validation &amp; Anti-Bypass</a><a href="#s4">Dataset</a><a href="#s5">Tools</a><a href="#s6">Work Plan</a><a href="#s7">Project Outputs</a><a href="#s8">Success Criteria</a><a href="#s9">Assumptions &amp; Limitations</a></div><button type="button" class="tab" data-t="report" aria-expanded="false" aria-controls="report">Report Project</button><div class="links" data-tab="report" hidden><a href="#rp1">Problem</a><a href="#rp2">Data</a><a href="#rp3">Analysis</a><a href="#rp4">Recommendation</a><a href="#rp5">Impact</a><a href="#rp6">Batasan</a></div></nav>
 
 <header class="banner"><h1>Project 19: Data Quality Audit &amp; Anti-Bypass Template</h1>
 <p class="goal"><b>Tujuan project:</b> mengukur seberapa sering data yang diisi operator di log Excel salah, dikosongkan, atau menimpa rumus, lalu membangun template Excel tervalidasi dan terkunci yang mencegah kesalahan tersebut, sehingga rekap bulanan bisa dipercaya tanpa koreksi manual dan penurunan error dapat dibuktikan dengan angka.</p>
 <div class="tags"><span class="tlab">Kategori:</span><span class="tag a">Rancangan project</span><span class="tag c1">Manufaktur PCBA</span><span class="tag c2">Data simulasi</span><span class="tag c3">Excel + Python audit</span></div></header>
 
+<div class="pane" id="design" data-tab="design">
 <section class="card intro">
 <h3>Project Introduction</h3>
 <p>Bayangkan sebuah warung yang mencatat stok di buku tulis. Setiap hari pegawai menulis jumlah barang masuk, barang terjual, dan sisa stok. Kadang angka salah tulis, kadang satu kolom lupa diisi, kadang sisa stok tidak dihitung tetapi ditulis kira-kira. Di akhir bulan, pemilik warung bingung karena jumlah di buku tidak cocok dengan barang di rak.</p>
@@ -471,6 +488,37 @@ main>nav a{border-radius:10px;font-size:15px;padding:8px 14px}
 <p><b>Proteksi sheet bukan keamanan penuh.</b> Password proteksi Excel bisa dibuka, dan admin yang memegang password tetap bisa mengubah rumus. Template mencegah salah tidak sengaja, bukan manipulasi yang disengaja.</p>
 <p><b>Isian yang formatnya benar tetap bisa salah.</b> Angka 36 yang seharusnya 35 lolos semua aturan. Bagian Q11 mengukur jenis error ini secara terpisah.</p>
 <p><b>Pola belum tentu penyebab.</b> Jika shift malam lebih sering salah, itu baru pola. Penyebabnya (beban kerja, pencahayaan, tata letak form) perlu dicek di lapangan.</p></details></div></div>
+</div>
+
+<div class="pane" id="report" data-tab="report" hidden>
+<div class="callout a"><h4>Status Report Project</h4><p>Laporan hasil diisi setelah analisis dikerjakan. Sudah ditulis: Problem, Data, Analysis, Impact, Batasan. Masih kosong: Recommendation. Rancangan lengkap ada di tab <a href="#design">Design Project</a>.</p></div>
+<div class="scroll"><table><tr><th>Bagian</th><th>Status</th></tr>
+<tr><td><b>Problem</b></td><td><span class="pill">Draft</span></td></tr>
+<tr><td><b>Data</b></td><td><span class="pill">Draft</span></td></tr>
+<tr><td><b>Analysis</b></td><td><span class="pill">Draft</span></td></tr>
+<tr><td><b>Recommendation</b></td><td><span class="pill d">Belum dikerjakan</span></td></tr>
+<tr><td><b>Impact</b></td><td><span class="pill">Draft</span></td></tr>
+<tr><td><b>Batasan</b></td><td><span class="pill">Draft</span></td></tr>
+</table></div>
+
+<h2 id="rp1">1. Problem<small>Pertanyaan yang ingin dijawab</small></h2>
+<div class="card"><p>Seberapa sering data input operator salah, dikosongkan, atau menimpa rumus, dan berapa banyak error yang bisa dicegah oleh template anti-bypass?</p></div>
+
+<h2 id="rp2">2. Data<small>Sumber, ukuran, dan perlakuan awal</small></h2>
+<div class="card"><p>Data simulasi buatan sendiri, dibuat oleh <code>scripts/generate_log.py</code> (seed tetap): workbook log lama dan log hasil uji template, masing-masing ±3 bulan dan ±1.800 entri (4 model papan sirkuit, 3 stasiun asal NG, 2 shift). Error ditanam sebagai ground truth: OK + scrap melebihi qty diterima, sel wajib kosong, sel rumus ditimpa angka, carry-over tidak tersambung, kode salah ketik, baris ganda. Tidak memakai data perusahaan.</p></div>
+
+<h2 id="rp3">3. Analysis<small>Hasil perhitungan dari data</small></h2>
+<div class="card"><p>Rencana: audit aturan R01–R07, error rate per 1.000 entri, Pareto error per kolom dan aturan, audit rumus vs hardcode dengan openpyxl, rekonsiliasi rekap dan carry-over, perbandingan before–after template. Belum dikerjakan.</p></div>
+
+<h2 id="rp4">4. Recommendation<small>Tindakan yang disarankan dari temuan</small></h2>
+<div class="card"><p>Belum dikerjakan.</p></div>
+
+<h2 id="rp5">5. Impact<small>Seberapa besar manfaatnya</small></h2>
+<div class="card"><p>Belum dikerjakan. Angka dampak akan diberi label <code>estimated</code> / <code>simulated</code>.</p></div>
+
+<h2 id="rp6">6. Batasan yang sudah diketahui<small>Hal yang perlu diwaspadai saat membaca hasil</small></h2>
+<div class="card"><ul class="tight"><li>Penurunan error di log template ditentukan asumsi generator; perlu uji coba nyata sebelum klaim angka.</li><li>Proteksi sheet Excel mencegah salah tidak sengaja, bukan manipulasi yang disengaja.</li><li>Isian yang formatnya benar tetap bisa salah dan diukur terpisah.</li><li>Tidak ada database SQL; poin "analisis SQL" di checklist standar ditandai N/A.</li></ul></div>
+</div>
 </main>
 
 <script>
@@ -507,6 +555,14 @@ addEventListener('scroll',()=>tip.style.display='none',{passive:true});
 const qg=$('qg');document.querySelector('.fbar').onclick=e=>{const b=e.target.closest('.fb');if(!b)return;const f=b.dataset.f;
 document.querySelectorAll('.fbar[aria-label="Filter pertanyaan"] .fb').forEach(x=>x.classList.toggle('on',x==b));let th=null,vis=0;
 [...qg.children].forEach(el=>{if(el.classList.contains('theme')){if(th)th.hidden=!vis;th=el;vis=0}else{const show=f=='*'||el.dataset.p==f;el.hidden=!show;if(show)vis++}});if(th)th.hidden=!vis};
-let seen=new Set();[...document.querySelector('main').children].forEach(el=>{if(el.tagName=='H2')seen=new Set();hl(el,seen)});
+let seen=new Set();document.querySelectorAll('main>.pane>*').forEach(el=>{if(el.tagName=='H2')seen=new Set();hl(el,seen)});
+
+const TB=[...document.querySelectorAll('.tab')];
+function setTab(t){document.querySelectorAll('.pane,.links').forEach(e=>e.hidden=e.dataset.tab!==t);TB.forEach(x=>{const on=x.dataset.t===t;x.classList.toggle('on',on);x.setAttribute('aria-expanded',on)})}
+function route(){const h=decodeURIComponent(location.hash.slice(1)),el=h&&document.getElementById(h);
+if(h=='design'||h=='report'){setTab(h);scrollTo(0,0);return}
+if(el){const p=el.closest('.pane');if(p){setTab(p.dataset.tab);el.scrollIntoView()}}}
+TB.forEach(x=>x.onclick=()=>{location.hash=x.dataset.t});
+addEventListener('hashchange',route);route();
 </script>
 </body></html>
