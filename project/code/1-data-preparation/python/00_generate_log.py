@@ -3,7 +3,7 @@
 Dua workbook, masing-masing +-1.800 entri (Jul - Sep 2026): 65 hari kerja x 2 shift x 14 entri.
 Error ditanam sebagai ground truth (aturan R01-R07), dicatat di data/sim/ground_truth_errors.csv.
 Hasil (data/sim/): log_lama.xlsx, log_template.xlsx, ground_truth_errors.csv, ground_truth.json.
-Jalankan: python scripts/generate_log.py   (versi data: v1; butuh openpyxl)
+Jalankan: python3 code/1-data-preparation/python/00_generate_log.py   (dari folder project/; versi data: v1; butuh openpyxl)
 Catatan: log_template di sini disimulasikan lewat tingkat error yang lebih rendah (asumsi generator);
 template Excel sebenarnya dibangun di folder template/ dan perlu uji coba nyata sebelum klaim angka.
 """
@@ -19,8 +19,9 @@ import pandas as pd
 from openpyxl import Workbook
 from openpyxl.worksheet.datavalidation import DataValidation
 
-ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "data" / "sim"
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from common import SIM as OUT
 SEED = 19260701
 DATA_VERSION = "v1"
 MODELS = ["PCB-A1", "PCB-A2", "PCB-B1", "PCB-B2"]

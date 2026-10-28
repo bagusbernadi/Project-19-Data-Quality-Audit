@@ -1,0 +1,49 @@
+cek,version,item,nilai_a,nilai_b,cocok
+pandas vs loop Python,before,R01,6.0,6.0,1
+pandas vs loop Python,before,R02,15.0,15.0,1
+pandas vs loop Python,before,R03,36.0,36.0,1
+pandas vs loop Python,before,R04,18.0,18.0,1
+pandas vs loop Python,before,R05,23.0,23.0,1
+pandas vs loop Python,before,R06,19.0,19.0,1
+pandas vs loop Python,after,R01,0.0,0.0,1
+pandas vs loop Python,after,R02,0.0,0.0,1
+pandas vs loop Python,after,R03,0.0,0.0,1
+pandas vs loop Python,after,R04,0.0,0.0,1
+pandas vs loop Python,after,R05,0.0,0.0,1
+pandas vs loop Python,after,R06,2.0,2.0,1
+pandas vs loop Python,before,R07,6.0,6.0,1
+pandas vs loop Python,after,R07,1.0,1.0,1
+pandas vs SQL DuckDB,before,R03,36.0,36.0,1
+pandas vs SQL DuckDB,after,R03,0.0,0.0,1
+pandas vs SQL DuckDB,before,R04,18.0,18.0,1
+pandas vs SQL DuckDB,after,R04,0.0,0.0,1
+pandas vs SQL DuckDB,before,R05,23.0,23.0,1
+pandas vs SQL DuckDB,after,R05,0.0,0.0,1
+pandas vs SQL DuckDB,before,R06,19.0,19.0,1
+pandas vs SQL DuckDB,after,R06,2.0,2.0,1
+pandas vs SQL DuckDB,before,R01,6.0,6.0,1
+pandas vs SQL DuckDB,after,R01,0.0,0.0,1
+pandas vs Excel (LibreOffice),after,2026-07 diterima,44509.0,44509.0,1
+pandas vs Excel (LibreOffice),after,2026-07 ok,41925.0,41925.0,1
+pandas vs Excel (LibreOffice),after,2026-07 scrap,2330.0,2330.0,1
+pandas vs Excel (LibreOffice),after,2026-07 sisa,15326.0,15326.0,1
+pandas vs Excel (LibreOffice),after,2026-08 diterima,41399.0,41399.0,1
+pandas vs Excel (LibreOffice),after,2026-08 ok,39238.0,39238.0,1
+pandas vs Excel (LibreOffice),after,2026-08 scrap,2220.0,2220.0,1
+pandas vs Excel (LibreOffice),after,2026-08 sisa,14688.0,14688.0,1
+pandas vs Excel (LibreOffice),after,2026-09 diterima,40420.0,40420.0,1
+pandas vs Excel (LibreOffice),after,2026-09 ok,38232.0,38232.0,1
+pandas vs Excel (LibreOffice),after,2026-09 scrap,2158.0,2158.0,1
+pandas vs Excel (LibreOffice),after,2026-09 sisa,13898.0,13898.0,1
+pandas vs Excel (LibreOffice),before,2026-07 diterima,45250.0,45250.0,1
+pandas vs Excel (LibreOffice),before,2026-07 ok,42510.0,42510.0,1
+pandas vs Excel (LibreOffice),before,2026-07 scrap,2406.0,2406.0,1
+pandas vs Excel (LibreOffice),before,2026-07 sisa,15486.0,15486.0,1
+pandas vs Excel (LibreOffice),before,2026-08 diterima,42274.0,42274.0,1
+pandas vs Excel (LibreOffice),before,2026-08 ok,40479.0,40479.0,1
+pandas vs Excel (LibreOffice),before,2026-08 scrap,2179.0,2179.0,1
+pandas vs Excel (LibreOffice),before,2026-08 sisa,14009.5,14009.5,1
+pandas vs Excel (LibreOffice),before,2026-09 diterima,42075.0,42075.0,1
+pandas vs Excel (LibreOffice),before,2026-09 ok,39586.0,39586.0,1
+pandas vs Excel (LibreOffice),before,2026-09 scrap,2196.0,2196.0,1
+pandas vs Excel (LibreOffice),before,2026-09 sisa,14894.5,14894.5,1

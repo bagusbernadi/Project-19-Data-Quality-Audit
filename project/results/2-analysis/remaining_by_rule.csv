@@ -1,0 +1,8 @@
+rule_id,deskripsi,kategori,before,after
+R01,Qty OK + Qty Scrap tidak boleh melebihi stok tersedia (Sisa Awal + Qty Diterima),salah isi,6,0
+R02,Semua qty bilangan bulat >= 0,salah isi,15,0
+R03,Kolom wajib tidak boleh kosong,dilewati,36,0
+R04,"Shift, model, dan stasiun asal harus dari daftar baku",salah isi,18,0
+R05,Sel Sisa harus berisi rumus,bypass,23,0
+R06,"Tidak boleh ada dua baris dengan tanggal, shift, model, stasiun, dan batch yang sama",salah isi,19,2
+R07,Sisa awal bulan sama dengan sisa akhir bulan sebelumnya,salah isi,6,1

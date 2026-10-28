@@ -1,0 +1,18 @@
+cek,dibandingkan,cocok
+kolom batch,1822,1822
+kolom sisa_awal,1822,1822
+kolom sisa,1822,1822
+kolom cek,1822,1822
+Rekap entri,12,12
+Rekap diterima,12,12
+Rekap ok,12,12
+Rekap scrap,12,12
+Rekap bertanda,12,12
+ABNORMAL == R01 pada data uji,1822,1821
+sheet Log terproteksi,1,1
+sheet Rekap terproteksi,1,1
+sheet Master terproteksi,1,1
+"sel terbuka hanya kolom input (A,B,C,D,G,H,I)",1,1
+jumlah validasi pada Log = 7,1,1
+jumlah sel rumus = 4 kolom x baris,1,1
+"kolom rumus terkunci (E,F,J,K)",1,1

@@ -1,0 +1,9 @@
+version,faktor,chi2,dof,p,kelompok,bermasalah_total,p_holm,signifikan
+before,shift,0.0388817362,1,0.8436831415,2,117,1,0
+before,model,0.2141670259,3,0.9752704894,4,115,1,0
+before,minggu,1.086527081,1,0.2972419784,2,121,1,0
+before,volume harian,2.453186506,2,0.2932900427,3,121,1,0
+after,shift,0,1,1,2,3,1,0
+after,model,3.764114263,3,0.2880879275,4,3,1,0
+after,minggu,0,1,1,2,3,1,0
+after,volume harian,0.001392023645,2,0.9993042303,3,3,1,0

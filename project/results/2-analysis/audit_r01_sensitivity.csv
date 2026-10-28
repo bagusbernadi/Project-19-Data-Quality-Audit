@@ -1,0 +1,5 @@
+version,definisi,pelanggaran
+before,"stok tersedia (sisa awal + diterima), dasar",6
+before,qty diterima saja (rancangan literal),910
+after,"stok tersedia (sisa awal + diterima), dasar",0
+after,qty diterima saja (rancangan literal),886

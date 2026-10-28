@@ -1,0 +1,6 @@
+version,faktor,level,entri,entri_R03,proporsi
+before,shift,(kosong),4,4,1
+before,shift,Shift 1,917,15,0.01635768811
+before,shift,Shift 2,918,17,0.01851851852
+before,minggu,hari lain,1443,30,0.02079002079
+before,minggu,minggu terakhir bulan,396,6,0.01515151515

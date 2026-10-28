@@ -1,0 +1,10 @@
+pandas>=2.0
+numpy
+scipy
+openpyxl
+duckdb>=1.0
+matplotlib
+nbformat
+nbconvert
+nbclient
+ipykernel

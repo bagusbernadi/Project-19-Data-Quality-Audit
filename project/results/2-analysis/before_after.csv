@@ -1,0 +1,2 @@
+entri_before,entri_after,pelanggaran_before,pelanggaran_after,error_per_1000_before,error_per_1000_after,penurunan,penurunan_ci_low,penurunan_ci_high,target_penurunan,tercapai,tercapai_ci_low,entri_bermasalah_before,entri_bermasalah_after,proporsi_before,proporsi_after,prop_before_ci_low,prop_before_ci_high,prop_after_ci_low,prop_after_ci_high,p_fisher
+1839,1822,123,3,66.88417618,1.646542261,0.9753821852,0.9428603488,1,0.7,1,1,121,3,0.0657966286,0.001646542261,0.05534594926,0.07805759449,0.000560117324,0.004830054529,4.936634308e-33

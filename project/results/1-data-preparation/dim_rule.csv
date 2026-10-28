@@ -1,0 +1,8 @@
+rule_id,description,category,check_logic
+R01,Qty OK + Qty Scrap tidak boleh melebihi stok tersedia (Sisa Awal + Qty Diterima),salah isi,"OK + scrap > sisa awal + diterima (asumsi: rancangan menulis 'qty diterima', log punya kolom Sisa Awal)"
+R02,Semua qty bilangan bulat >= 0,salah isi,"sel Sisa Awal, Diterima, OK, Scrap bukan angka bulat >= 0 (teks, desimal, negatif)"
+R03,Kolom wajib tidak boleh kosong,dilewati,salah satu dari sembilan kolom isian kosong
+R04,"Shift, model, dan stasiun asal harus dari daftar baku",salah isi,"nilai tidak persis sama dengan daftar baku (spasi, huruf, ejaan)"
+R05,Sel Sisa harus berisi rumus,bypass,sel Sisa tidak berisi rumus (ditimpa angka ketikan)
+R06,"Tidak boleh ada dua baris dengan tanggal, shift, model, stasiun, dan batch yang sama",salah isi,baris kedua dan seterusnya dengan kunci sama
+R07,Sisa awal bulan sama dengan sisa akhir bulan sebelumnya,salah isi,"Sisa Awal entri pertama (model, stasiun) tiap bulan berbeda dari Sisa terhitung entri terakhir bulan sebelumnya"

@@ -1,0 +1,3 @@
+version,entri,entri_ditanam,entri_bertanda,tp,recall_entri,precision_entri,alarm_palsu_persen_entri_bersih,tercapai_recall,tercapai_alarm
+before,1839,155,121,120,0.7741935484,0.9917355372,0.000593824228,0,1
+after,1822,4,3,3,0.75,1,0,0,1

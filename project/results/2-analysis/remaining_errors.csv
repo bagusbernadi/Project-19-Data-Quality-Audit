@@ -1,0 +1,4 @@
+anomaly_id,entry_id,version,rule_id,column,value_found,category,deskripsi
+A00001,T00386,after,R06,Batch,B00384,salah isi,"Tidak boleh ada dua baris dengan tanggal, shift, model, stasiun, dan batch yang sama"
+A00002,T00650,after,R07,Sisa Awal,20,salah isi,Sisa awal bulan sama dengan sisa akhir bulan sebelumnya
+A00003,T01761,after,R06,Batch,B01758,salah isi,"Tidak boleh ada dua baris dengan tanggal, shift, model, stasiun, dan batch yang sama"

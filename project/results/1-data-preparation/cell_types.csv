@@ -1,0 +1,28 @@
+version,column,tipe,sel
+after,Batch,teks,1822
+after,Model,teks,1822
+after,Qty Diterima,int,1822
+after,Qty OK,int,1822
+after,Qty Scrap,int,1822
+after,Shift,teks,1822
+after,Sisa,rumus,1822
+after,Sisa Awal,int,1822
+after,Stasiun Asal,teks,1822
+after,Tanggal,tanggal,1822
+before,Batch,teks,1839
+before,Model,kosong,6
+before,Model,teks,1833
+before,Qty Diterima,int,1831
+before,Qty Diterima,kosong,8
+before,Qty OK,int,1830
+before,Qty OK,kosong,9
+before,Qty Scrap,int,1830
+before,Qty Scrap,teks,9
+before,Shift,kosong,4
+before,Shift,teks,1835
+before,Sisa,int,23
+before,Sisa,rumus,1816
+before,Sisa Awal,int,1839
+before,Stasiun Asal,kosong,9
+before,Stasiun Asal,teks,1830
+before,Tanggal,tanggal,1839

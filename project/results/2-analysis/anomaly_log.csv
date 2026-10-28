@@ -1,0 +1,127 @@
+anomaly_id,entry_id,version,rule_id,column,value_found,category
+A00001,T00386,after,R06,Batch,B00384,salah isi
+A00002,T00650,after,R07,Sisa Awal,20,salah isi
+A00003,T01761,after,R06,Batch,B01758,salah isi
+A00004,L00002,before,R05,Sisa,16,bypass
+A00005,L00022,before,R06,Batch,B00020,salah isi
+A00006,L00024,before,R03,Stasiun Asal,(kosong),dilewati
+A00007,L00029,before,R06,Batch,B00026,salah isi
+A00008,L00085,before,R02,Qty Scrap,10 pcs,salah isi
+A00009,L00094,before,R03,Shift,(kosong),dilewati
+A00010,L00107,before,R04,Model,pcba2,salah isi
+A00011,L00130,before,R05,Sisa,23,bypass
+A00012,L00155,before,R03,Qty Diterima,(kosong),dilewati
+A00013,L00155,before,R05,Sisa,21,bypass
+A00014,L00182,before,R02,Qty Scrap,-4,salah isi
+A00015,L00194,before,R05,Sisa,23,bypass
+A00016,L00199,before,R03,Qty OK,(kosong),dilewati
+A00017,L00205,before,R04,Stasiun Asal,Stn ICT,salah isi
+A00018,L00231,before,R03,Model,(kosong),dilewati
+A00019,L00234,before,R05,Sisa,37,bypass
+A00020,L00259,before,R04,Model,pcba2,salah isi
+A00021,L00273,before,R03,Model,(kosong),dilewati
+A00022,L00277,before,R03,Qty Diterima,(kosong),dilewati
+A00023,L00303,before,R03,Stasiun Asal,(kosong),dilewati
+A00024,L00353,before,R02,Qty Scrap,3 pcs,salah isi
+A00025,L00389,before,R06,Batch,B00385,salah isi
+A00026,L00390,before,R01,Qty OK,82 + 0 > stok,salah isi
+A00027,L00395,before,R03,Qty OK,(kosong),dilewati
+A00028,L00413,before,R04,Stasiun Asal,Stn ICT,salah isi
+A00029,L00448,before,R03,Shift,(kosong),dilewati
+A00030,L00454,before,R03,Model,(kosong),dilewati
+A00031,L00506,before,R02,Qty Scrap,-2,salah isi
+A00032,L00518,before,R05,Sisa,21,bypass
+A00033,L00521,before,R03,Qty OK,(kosong),dilewati
+A00034,L00526,before,R03,Qty OK,(kosong),dilewati
+A00035,L00538,before,R04,Model,pcba1,salah isi
+A00036,L00553,before,R05,Sisa,6,bypass
+A00037,L00580,before,R06,Batch,B00575,salah isi
+A00038,L00604,before,R06,Batch,B00598,salah isi
+A00039,L00652,before,R07,Sisa Awal,21,salah isi
+A00040,L00654,before,R07,Sisa Awal,31,salah isi
+A00041,L00658,before,R07,Sisa Awal,33,salah isi
+A00042,L00690,before,R05,Sisa,29,bypass
+A00043,L00703,before,R05,Sisa,47,bypass
+A00044,L00719,before,R05,Sisa,7,bypass
+A00045,L00721,before,R01,Qty OK,91 + 7 > stok,salah isi
+A00046,L00735,before,R03,Shift,(kosong),dilewati
+A00047,L00748,before,R06,Batch,B00741,salah isi
+A00048,L00773,before,R06,Batch,B00765,salah isi
+A00049,L00783,before,R06,Batch,B00774,salah isi
+A00050,L00800,before,R03,Model,(kosong),dilewati
+A00051,L00805,before,R04,Model,pcbb2,salah isi
+A00052,L00817,before,R06,Batch,B00807,salah isi
+A00053,L00826,before,R05,Sisa,16,bypass
+A00054,L00890,before,R01,Qty OK,56 + 3 > stok,salah isi
+A00055,L00894,before,R02,Qty Scrap,-1,salah isi
+A00056,L00912,before,R04,Model,pcba2,salah isi
+A00057,L00921,before,R03,Stasiun Asal,(kosong),dilewati
+A00058,L00936,before,R03,Model,(kosong),dilewati
+A00059,L00967,before,R06,Batch,B00956,salah isi
+A00060,L00971,before,R03,Qty Diterima,(kosong),dilewati
+A00061,L00972,before,R05,Sisa,5,bypass
+A00062,L01018,before,R02,Qty Scrap,16.5,salah isi
+A00063,L01028,before,R05,Sisa,19,bypass
+A00064,L01083,before,R01,Qty OK,65 + 1 > stok,salah isi
+A00065,L01097,before,R06,Batch,B01085,salah isi
+A00066,L01111,before,R01,Qty OK,98 + 6 > stok,salah isi
+A00067,L01123,before,R06,Batch,B01110,salah isi
+A00068,L01124,before,R02,Qty Scrap,5 pcs,salah isi
+A00069,L01131,before,R05,Sisa,35,bypass
+A00070,L01161,before,R02,Qty Scrap,4.5,salah isi
+A00071,L01197,before,R04,Model,pcbb1,salah isi
+A00072,L01203,before,R02,Qty Scrap,0.5,salah isi
+A00073,L01211,before,R03,Qty Diterima,(kosong),dilewati
+A00074,L01216,before,R03,Stasiun Asal,(kosong),dilewati
+A00075,L01221,before,R02,Qty Scrap,2 pcs,salah isi
+A00076,L01229,before,R06,Batch,B01215,salah isi
+A00077,L01234,before,R03,Qty Diterima,(kosong),dilewati
+A00078,L01250,before,R01,Qty OK,69 + 1 > stok,salah isi
+A00079,L01250,before,R03,Stasiun Asal,(kosong),dilewati
+A00080,L01254,before,R07,Sisa Awal,30,salah isi
+A00081,L01256,before,R07,Sisa Awal,18,salah isi
+A00082,L01261,before,R04,Model,pcba1,salah isi
+A00083,L01264,before,R07,Sisa Awal,16,salah isi
+A00084,L01276,before,R05,Sisa,28,bypass
+A00085,L01281,before,R05,Sisa,13,bypass
+A00086,L01305,before,R04,Stasiun Asal,Stn ICT,salah isi
+A00087,L01319,before,R05,Sisa,16,bypass
+A00088,L01342,before,R02,Qty Scrap,-2,salah isi
+A00089,L01347,before,R04,Stasiun Asal,Stn ICT,salah isi
+A00090,L01351,before,R03,Qty OK,(kosong),dilewati
+A00091,L01360,before,R04,Model,pcba1,salah isi
+A00092,L01364,before,R05,Sisa,11,bypass
+A00093,L01378,before,R06,Batch,B01363,salah isi
+A00094,L01380,before,R03,Qty Diterima,(kosong),dilewati
+A00095,L01390,before,R03,Qty Diterima,(kosong),dilewati
+A00096,L01397,before,R03,Qty OK,(kosong),dilewati
+A00097,L01403,before,R06,Batch,B01387,salah isi
+A00098,L01406,before,R02,Qty Scrap,-4,salah isi
+A00099,L01408,before,R03,Shift,(kosong),dilewati
+A00100,L01415,before,R04,Model,pcbb2,salah isi
+A00101,L01439,before,R02,Qty Scrap,1 pcs,salah isi
+A00102,L01452,before,R04,Model,pcbb1,salah isi
+A00103,L01466,before,R05,Sisa,27,bypass
+A00104,L01491,before,R04,Model,pcba2,salah isi
+A00105,L01499,before,R03,Qty OK,(kosong),dilewati
+A00106,L01501,before,R03,Stasiun Asal,(kosong),dilewati
+A00107,L01508,before,R06,Batch,B01491,salah isi
+A00108,L01519,before,R03,Qty Diterima,(kosong),dilewati
+A00109,L01521,before,R05,Sisa,14,bypass
+A00110,L01542,before,R04,Stasiun Asal,Stn SMT,salah isi
+A00111,L01568,before,R03,Model,(kosong),dilewati
+A00112,L01575,before,R05,Sisa,34,bypass
+A00113,L01576,before,R04,Stasiun Asal,Stn AOI,salah isi
+A00114,L01580,before,R05,Sisa,12,bypass
+A00115,L01617,before,R03,Stasiun Asal,(kosong),dilewati
+A00116,L01619,before,R06,Batch,B01601,salah isi
+A00117,L01622,before,R03,Stasiun Asal,(kosong),dilewati
+A00118,L01629,before,R02,Qty Scrap,1.5,salah isi
+A00119,L01646,before,R02,Qty Scrap,-4,salah isi
+A00120,L01652,before,R06,Batch,B01633,salah isi
+A00121,L01656,before,R06,Batch,B01636,salah isi
+A00122,L01660,before,R03,Qty OK,(kosong),dilewati
+A00123,L01670,before,R04,Stasiun Asal,Stn ICT,salah isi
+A00124,L01696,before,R03,Stasiun Asal,(kosong),dilewati
+A00125,L01740,before,R03,Qty OK,(kosong),dilewati
+A00126,L01823,before,R05,Sisa,29,bypass

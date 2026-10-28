@@ -1,0 +1,6 @@
+fakta,rancangan,ukuran,nilai,n,k,ukuran2,nilai2,nilai3
+1,3% entri OK + scrap melebihi qty diterima,"entri R01 proporsi entri (definisi dasar, stok tersedia)",0.003262642741,1839,6,definisi literal (qty diterima saja),0.494834149,
+2,"2% sel wajib kosong, terpusat shift malam dan minggu terakhir bulan",entri R03 proporsi entri,0.01957585644,1839,36,p-value R03 Shift 2 vs Shift 1 | minggu terakhir vs lain,0.7438494563,0.473101686
+3,"1,5% sel Sisa ditimpa angka, terpusat bulan ke-3",entri R05 proporsi entri,0.01250679717,1839,23,porsi R05 di bulan ke-3 | p-value binomial vs porsi entri,0.3913043478,0.5067057573
+4,carry-over bulanan putus,pasangan bulan dengan Sisa Awal tidak sama / pasangan,0.2608695652,23,6,,,
+5,2% sampai 3% data kotor lain (format dan duplikat),"entri R02, R04, atau R06 proporsi entri",0.02827623709,1839,52,,,

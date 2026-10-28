@@ -7,7 +7,11 @@ Semua data di project ini simulasi (karangan), dibuat oleh generator dengan seed
 | Versi data | v1 |
 | Tanggal dibuat | 28 Okt 2026 |
 | Seed | 19260701 |
-| Cara membuat ulang | `python3 scripts/generate_log.py` (dari folder project) |
+| Cara membuat ulang | `python3 code/1-data-preparation/python/00_generate_log.py` (dari folder `project/`); isi `data/sim/` lalu `data/clean/` |
 | Hasil v1 | 2 workbook (1.839 entri log lama, 1.822 entri log template) |
 
 Isi folder ini tidak di-commit (lihat `.gitignore`). Jejak pembuatan (seed, commit, SHA-256 hasil) dicatat di repo `DataCenter`, folder `simulasi/`. Jika generator, seed, atau versi library berubah, hasil berubah dan versi data harus dinaikkan.
+
+Sidik jari SHA-256 hasil generator dicocokkan dengan `/simulasi/fingerprints/project-19.sha256` di repo DataCenter oleh `01_verify_fingerprint.py` (daftar di `docs/datacenter_fingerprint.csv`).
+
+Folder: `sim/` (workbook dan ground truth), `clean/` (tabel sel mentah). Tidak ada lisensi yang perlu diverifikasi karena semua data karangan.

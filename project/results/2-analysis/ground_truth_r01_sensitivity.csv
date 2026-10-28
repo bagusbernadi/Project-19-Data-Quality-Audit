@@ -1,0 +1,5 @@
+version,ditanam,terdeteksi,tp,recall,precision,definisi
+before,42,6,6,0.1428571429,1,stok tersedia (dasar)
+after,0,0,0,,,stok tersedia (dasar)
+before,42,910,42,1,0.04615384615,qty diterima saja (rancangan literal)
+after,0,886,0,,0,qty diterima saja (rancangan literal)

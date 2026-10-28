@@ -1,0 +1,22 @@
+versi,kolom,peran,wajib
+log lama,Tanggal,input operator,1
+log lama,Shift,input operator,1
+log lama,Model,input operator,1
+log lama,Stasiun Asal,input operator,1
+log lama,Batch,input operator,1
+log lama,Sisa Awal,input operator,1
+log lama,Qty Diterima,input operator,1
+log lama,Qty OK,input operator,1
+log lama,Qty Scrap,input operator,1
+log lama,Sisa,rumus (seharusnya),0
+template,Tanggal,input operator,1
+template,Shift,input operator,1
+template,Model,input operator,1
+template,Stasiun Asal,input operator,1
+template,Batch,rumus terkunci,0
+template,Sisa Awal,rumus terkunci,0
+template,Qty Diterima,input operator,1
+template,Qty OK,input operator,1
+template,Qty Scrap,input operator,1
+template,Sisa,rumus terkunci,0
+template,Cek,rumus terkunci,0

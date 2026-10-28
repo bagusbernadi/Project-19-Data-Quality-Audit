@@ -1,0 +1,3 @@
+version,ditanam,tak_dapat_dideteksi,dapat_dideteksi,terdeteksi,recall_dapat_dideteksi
+after,2,1,1,1,1
+before,8,2,6,5,0.8333333333
