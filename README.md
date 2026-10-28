@@ -19,6 +19,8 @@ Seberapa sering data input operator salah, dikosongkan, atau menimpa rumus, dan 
 ## 2. Data
 Data simulasi buatan sendiri, dibuat oleh `scripts/generate_log.py` (seed tetap): workbook log lama dan log hasil uji template, masing-masing ±3 bulan dan ±1.800 entri (4 model papan sirkuit, 3 stasiun asal NG, 2 shift). Error ditanam sebagai ground truth: OK + scrap melebihi qty diterima, sel wajib kosong, sel rumus ditimpa angka, carry-over tidak tersambung, kode salah ketik, baris ganda. Tidak memakai data perusahaan.
 
+Versi data: v1. Tanggal dibuat: 28 Okt 2026. Seed: 19260701. Generator: `scripts/generate_log.py`. Hasil v1: 2 workbook (1.839 entri log lama, 1.822 entri log template).
+
 ## 3. Analysis
 Rencana: audit aturan R01–R07, error rate per 1.000 entri, Pareto error per kolom dan aturan, audit rumus vs hardcode dengan openpyxl, rekonsiliasi rekap dan carry-over, perbandingan before–after template. Belum dikerjakan.
 
