@@ -48,6 +48,7 @@ ca_ = lambda c: cat[(cat.version == "after") & (cat.category == c)].iloc[0]
 rule_desc = dict(zip(dimr.rule_id, dimr.description))
 n_cx = len(cx); n_cx_ok = int(cx.cocok.sum())
 tc = lambda p: cx[cx.cek == p]
+hyp = rd(r2, "hypotheses.csv"); n_hy_t = int((hyp.verdict == "Terbukti").sum()); n_hy_s = int((hyp.verdict == "Sebagian").sum()); n_hy_n = int((hyp.verdict == "Tidak terbukti").sum())
 n_tt = len(tt); n_tt_ok = int((tt.dibandingkan == tt.cocok).sum())
 n_fp, n_fp_ok = len(fp), int((fp.hasil == "cocok").sum())
 rules = list(C.RULES)
@@ -173,8 +174,11 @@ def rowfmt(df, cols):
 sec2 = []
 n_main = sum(1 for q in QS if q[2] == "Utama"); n_sup = sum(1 for q in QS if q[2] == "Pendukung"); n_add = sum(1 for q in QS if q[2] == "Tambahan")
 sec2.append(f'<div class="card"><h3>Jawaban singkat</h3><p>Semua {I(n_ans)} pertanyaan terjawab dengan angka dari data ({I(n_main)} Utama, {I(n_sup)} Pendukung, {I(n_add)} Tambahan). {I(len(WARN))} pertanyaan diberi catatan kuning '
-            f'(asumsi definisi, sampel kecil, hasil simulasi, atau estimasi). Pertanyaan utama project dijawab di bagian 7. Rancangan tidak memuat hipotesis formal.</p>'
+            f'(asumsi definisi, sampel kecil, hasil simulasi, atau estimasi). Pertanyaan utama project dijawab di bagian 7. Rancangan memuat {I(len(hyp))} hipotesis formal (H1 sampai H6); hasilnya di Tabel 2.0.</p>'
             f'<p class="how">Klik nomor pertanyaan untuk melompat. Q hijau = terjawab. Q kuning = terjawab dengan catatan.</p><div class="qchips">' + "".join(qchip(n, t) for n, t, _ in QS) + '</div></div>')
+_vk = {"Terbukti": "", "Sebagian": "p", "Tidak terbukti": "d"}
+sec2.append('<h3>2.0 Hipotesis pada Design Project</h3><div class="card"><p>Tabel 2.0: enam hipotesis rancangan, diuji dengan bunyi dan ambang persis seperti ditulis rancangan. Hasil dibaca dari hypotheses.csv; hipotesis yang dibantah data ditulis apa adanya.</p>'
+            + table(["Hipotesis", "Bunyi rancangan", "Hasil", "Bukti", "Catatan"], [[r.hid, esc(r.hipotesis_rancangan), pill(r.verdict, _vk[r.verdict]), esc(cs(r.bukti)), esc(cs(r.catatan_keputusan))] for r in hyp.itertuples()]) + '</div>')
 sec2.append('<h3>2.1 Error rate, kolom, dan aturan</h3><div class="card"><p>Grafik 2.1a: error per 1.000 entri menurut kategori, log lama dan template.</p>' + chart_cat + legend([(BLUE, "Log lama"), ("#188038", "Template")])
             + '<p>Tabel 2.1b: error per kategori dengan CI Poisson.</p>'
             + table(["Versi", "Kategori", "Pelanggaran", "Entri terdampak", "Per 1.000 entri", "CI 95%"], [[("Log lama" if r.version == "before" else "Template"), r.category, I(r.pelanggaran), I(r.entri_terdampak), D(r.per_1000, 1), f"{D(r.ci_low, 1)} sampai {D(r.ci_high, 1)}"] for r in cat.itertuples()])
@@ -251,7 +255,7 @@ FILES = {
     "chain_check.csv": "pasangan bulan carry-over", "column_inventory.csv": "inventaris kolom", "column_inventory_summary.csv": "ringkasan inventaris kolom", "crosscheck.csv": "cek silang pandas, loop, SQL, Excel",
     "design_facts.csv": "lima fakta data rancangan terhadap hasil", "entry_flags.csv": "bendera aturan per entri", "formula_diff_cells.csv": "selisih tiap sel ketikan terhadap rumus",
     "formula_diff_summary.csv": "ringkasan selisih ketikan", "formula_hardcode.csv": "sel rumus berisi angka ketikan", "ground_truth_overall.csv": "recall dan precision per entri", "ground_truth_r01_sensitivity.csv": "sensitivitas R01 vs ground truth",
-    "ground_truth_r07.csv": "R07 menurut kemungkinan terdeteksi", "ground_truth_recall.csv": "recall dan precision per aturan", "hours_saved.csv": "estimasi jam koreksi (estimated)", "kpi.csv": "KPI kualitas data",
+    "hypotheses.csv": "verdict enam hipotesis rancangan", "ground_truth_r07.csv": "R07 menurut kemungkinan terdeteksi", "ground_truth_recall.csv": "recall dan precision per aturan", "hours_saved.csv": "estimasi jam koreksi (estimated)", "kpi.csv": "KPI kualitas data",
     "patterns.csv": "error per shift, model, minggu, volume", "patterns_r03.csv": "R03 per shift dan minggu", "patterns_tests.csv": "uji pola chi-square dan Holm", "recap_reconcile.csv": "rekap mentah vs terkoreksi",
     "recap_reconcile_sensitivity.csv": "rekap dengan pembulatan biasa", "remaining_by_rule.csv": "pelanggaran before-after per aturan", "remaining_errors.csv": "pelanggaran tersisa di template", "template_test.csv": "uji template"}
 real = sorted(p.name for p in r2.glob("*.csv"))
@@ -290,7 +294,7 @@ REP.append('<div class="card"><p class="how">Tabel 3a. Rancangan dan realisasi d
                ["Fakta 4: carry-over putus", "satu carry-over putus", f"{I(f4.k)} dari {I(f4.n)} pasangan bulan putus pada log lama ({P(f4.nilai, 1)}); lebih banyak dari satu", pill("Lebih besar", "")],
                ["Fakta 5: data kotor lain", "2% sampai 3%", f"{P(f5.nilai, 2)} entri bermasalah format atau duplikat (R02, R04, R06)", pill("Sesuai", "")],
                ["Sidik jari data", "tidak ada di rancangan", f"{I(n_fp_ok)} dari {I(n_fp)} berkas cocok dengan repo DataCenter", pill("Tambahan", "")],
-               ["Hipotesis", "tidak ada hipotesis formal pada rancangan", "lima fakta data di atas diperlakukan sebagai klaim yang diuji", pill("Tidak berlaku", "d")]]) + '</div>')
+               ["Hipotesis", f"{I(len(hyp))} hipotesis formal H1 sampai H6 pada rancangan (bagian 4)", f"{I(n_hy_t)} Terbukti, {I(n_hy_s)} Sebagian, {I(n_hy_n)} Tidak terbukti (Tabel 2.0); ditambahkan ke rancangan setelah analisis, ambang tidak diubah", pill("Sebagian", "p")]]) + '</div>')
 
 # ---------- rp4 ----------
 REP.append('<h2 id="rp4">4. Apakah tools yang digunakan sesuai?<small>Perbandingan rancangan dengan eksekusi</small></h2>')
@@ -305,7 +309,7 @@ STEPS = [("1", "Memetakan kolom log", "09_build_template.py menulis inventaris k
          ("3", "Membuat log lama simulasi", "00_generate_log.py dan sidik jari (01)", "Sesuai", ""), ("4", "Membaca workbook dua kali", "02_read_workbook.py", "Sesuai", ""), ("5", "Merapikan tipe data", "03_clean.py", "Sesuai", ""),
          ("6", "Menjalankan audit aturan", "04, 05, 12 (ground truth)", "Sesuai", ""), ("7", "Mengaudit rumus ditimpa", "06_formula_audit.py", "Sesuai", ""), ("8", "Rekonsiliasi rekap dan carry-over", "07_reconcile.py, 08_crosscheck.py", "Sesuai + tambahan", ""),
          ("9", "Membangun template anti-bypass", "09_build_template.py dan template_lib.py", "Sesuai", ""), ("10", "Menguji template dan before-after", "10_test_template.py, 11_before_after.py", "Sesuai", ""),
-         ("11", "Membuat dashboard audit", "13_build_dashboard.py (workbook dan PNG)", "Sesuai", ""), ("12", "README dan finalisasi", "14 sampai 15, build_report.py; branch belum di-merge", "Sebagian", "p")]
+         ("11", "Membuat dashboard audit", "14_build_dashboard.py (workbook dan PNG)", "Sesuai", ""), ("12", "README dan finalisasi", "15, 16, build_report.py; branch belum di-merge", "Sebagian", "p")]
 RENAMES = [("docs/column_inventory.md", ["project/docs/column_inventory.md"], True), ("docs/validation_rules.md", ["project/docs/validation_rules.md", "project/docs/definitions.md"], True),
            ("scripts/generate_log.py", ["project/code/1-data-preparation/python/00_generate_log.py"], True), ("data/log_before.xlsx", ["project/data/sim/log_lama.xlsx"], False),
            ("data/ground_truth.json", ["project/data/sim/ground_truth.json"], False), ("scripts/read_workbook.py", ["project/code/1-data-preparation/python/02_read_workbook.py"], True),
@@ -410,7 +414,7 @@ hub_link = SRC[body_start:SRC.index('<main>')]
 html = SRC[:head_end] + CSS_EXTRA + "\n" + SRC[head_end:body_start] + hub_link + '<main>\n' + nav_new + '\n' + design_pane + REPORT_PANE + SRC[SRC.index('</main>'):]
 assert design_pane in html, "pane Design berubah"
 
-STATIC = {str(i) for i in range(0, 41)} | {"2026", "50", "60", "80", "100", "0,05", "1,5", "3,0", "2,5", "1.1", "1.2", "1.3", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6",
+STATIC = {str(i) for i in range(0, 41)} | {"2026", "50", "60", "80", "100", "0,05", "1,5", "3,0", "2,5", "1.1", "1.2", "1.3", "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6",
                                            "01", "03", "04", "05", "06", "07", "08", "09", "00", "02", "10", "1.000", "1.800", "3a", "3b", "75", "85", "95", "1,0", "0,0"}
 n_tok, bad = audit(REPORT_PANE, STATIC)
 print(f"token angka diperiksa: {n_tok}; tidak terdaftar: {len(bad)}")

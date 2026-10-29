@@ -368,6 +368,17 @@ main>nav .links a:hover,main>nav .links a:focus-visible{background:var(--soft);c
 <p>4. Satu kali sisa akhir bulan tidak tersambung ke awal bulan berikutnya.</p>
 <p>5. Data kotor lain: kode model salah ketik atau berspasi, angka tersimpan sebagai teks, dan baris ganda.</p></div></div>
 
+<h3>Hipotesis yang akan diuji</h3>
+<p class="how">Enam pernyataan di bawah ditulis dari kalimat rancangan yang sudah ada (kriteria keberhasilan dan fakta yang ditanam) supaya hasilnya bisa dinyatakan terbukti, sebagian, atau tidak terbukti. Hipotesis ini ditambahkan setelah analisis berjalan; bunyi dan ambangnya tidak diubah setelah melihat hasil.</p>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Hipotesis</th><th>Pertanyaan</th><th>Cara menguji</th></tr></thead><tbody>
+<tr><td><b>H1</b></td><td>Skrip audit menemukan semua error yang ditanam (recall 100%) dengan alarm palsu di bawah 5%.</td><td>Q13</td><td>Recall dan alarm palsu terhadap ground truth</td></tr>
+<tr><td><b>H2</b></td><td>Error per 1.000 entri di log template turun minimal 70% dibanding log lama.</td><td>Q10</td><td>Perbandingan before–after, interval kepercayaan Wilson</td></tr>
+<tr><td><b>H3</b></td><td>Sel wajib yang dibiarkan kosong terpusat di shift malam dan di minggu terakhir bulan.</td><td>Q4</td><td>Uji proporsi per shift dan per minggu, koreksi Holm</td></tr>
+<tr><td><b>H4</b></td><td>Sel rumus Sisa yang ditimpa angka ketikan terpusat di bulan ketiga.</td><td>Q6</td><td>Uji binomial porsi bulan ketiga</td></tr>
+<tr><td><b>H5</b></td><td>Sisa akhir bulan tidak selalu tersambung ke sisa awal bulan berikutnya.</td><td>Q9</td><td>Cek rantai carry-over antar bulan</td></tr>
+<tr><td><b>H6</b></td><td>Semua bypass rumus tercegah di log template.</td><td>Q6</td><td>Audit rumus vs angka ketikan dengan openpyxl</td></tr>
+</tbody></table></div>
+
 <h3>Empat tabel yang akan dibuat</h3>
 <p class="how">Workbook Excel dibaca oleh Python lalu disusun menjadi beberapa tabel yang saling terhubung lewat kolom yang sama (misalnya entry_id dan rule_id). Kolom version membedakan log lama dan log template, sehingga perbandingan before–after memakai tabel yang sama.</p>
 <div class="scroll"><table>

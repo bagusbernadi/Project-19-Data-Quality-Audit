@@ -42,6 +42,8 @@ Log lama: 66,9 pelanggaran per 1.000 entri (salah isi 34,8, dilewati 19,6, bypas
 - Carry-over antar bulan cocok 17 dari 23 pasangan pada log lama.
 - Recall error tertanam 77,4% per entri (target 100% tidak tercapai); alarm palsu 0,8%.
 
+Hipotesis rancangan (`hypotheses.csv`, bunyi dan ambang tidak diubah): H1 Sebagian; H2 Terbukti; H3 Tidak terbukti; H4 Tidak terbukti; H5 Terbukti; H6 Terbukti.
+
 ## 4. Recommendation
 
 Pakai template dengan proteksi struktur workbook manual dan baca kolom Cek tiap akhir shift; audit bulanan mulai dari kolom wajib kosong dan sel Sisa yang ditimpa; sepakati definisi R01 dengan pemilik proses.

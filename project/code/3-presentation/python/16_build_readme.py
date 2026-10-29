@@ -1,4 +1,4 @@
-"""15: README.md dari CSV hasil (angka tidak diketik). Dijalankan paling akhir sebelum build_report.py."""
+"""16: README.md dari CSV hasil (angka tidak diketik). Dijalankan paling akhir sebelum build_report.py."""
 import sys
 from pathlib import Path
 
@@ -12,6 +12,7 @@ gto = pd.read_csv(R2 / "ground_truth_overall.csv").set_index("version"); fh = pd
 cx = pd.read_csv(R2 / "crosscheck.csv"); tt = pd.read_csv(R2 / "template_test.csv"); cos = pd.read_csv(R2 / "carryover_summary.csv").set_index("version")
 rc = pd.read_csv(R2 / "audit_rule_counts.csv"); rb = rc[rc.version == "before"].sort_values(["pelanggaran", "rule_id"], ascending=[False, True])
 inv = pd.read_csv(R2 / "column_inventory_summary.csv").set_index(["versi", "peran"]).jumlah_kolom
+hy = pd.read_csv(R2 / "hypotheses.csv"); hyp_txt = "; ".join(f"{r.hid} {r.verdict}" for r in hy.itertuples())
 rec = pd.read_csv(R2 / "recap_reconcile.csv"); recb = rec[rec.version == "before"]
 
 
@@ -59,6 +60,8 @@ Log lama: {D(kp.loc['before', 'error_per_1000'], 1)} pelanggaran per 1.000 entri
 - {I(fhb.angka_ketikan)} dari {I(fhb.sel_rumus)} sel rumus Sisa ({P(fhb.persen_ketikan, 2)}) berisi angka ketikan.
 - Carry-over antar bulan cocok {I(cos.loc['before', 'cocok'])} dari {I(cos.loc['before', 'pasangan'])} pasangan pada log lama.
 - Recall error tertanam {P(ob.recall_entri, 1)} per entri (target 100% tidak tercapai); alarm palsu {P(1 - ob.precision_entri, 1)}.
+
+Hipotesis rancangan (`hypotheses.csv`, bunyi dan ambang tidak diubah): {hyp_txt}.
 
 ## 4. Recommendation
 
