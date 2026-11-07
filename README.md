@@ -2,6 +2,8 @@
 
 # Project 19: Data Quality Audit & Anti-Bypass Template
 
+**Halaman web:** https://bagusbernadi.github.io/Project-19-Data-Quality-Audit/
+
 **Status: Selesai di branch `project-19-build` (belum di-merge ke `main`).** Halaman rancangan dan laporan: [`design-and-report/index.html`](design-and-report/index.html) (tab Design Project dan Report Project).
 
 **Tujuan:** mengukur seberapa sering data yang diisi operator di log Excel salah, dikosongkan, atau menimpa rumus, lalu membangun template Excel tervalidasi dan terkunci yang mencegah kesalahan tersebut.
