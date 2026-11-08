@@ -4,7 +4,7 @@
 
 **Halaman web:** https://bagusbernadi.github.io/Project-19-Data-Quality-Audit/
 
-**Status: Selesai di branch `project-19-build` (belum di-merge ke `main`).** Halaman rancangan dan laporan: [`design-and-report/index.html`](design-and-report/index.html) (tab Design Project dan Report Project).
+**Status: Selesai dan digabung ke `main`.** Halaman rancangan dan laporan: [`design-and-report/index.html`](design-and-report/index.html) (tab Design Project dan Report Project).
 
 **Tujuan:** mengukur seberapa sering data yang diisi operator di log Excel salah, dikosongkan, atau menimpa rumus, lalu membangun template Excel tervalidasi dan terkunci yang mencegah kesalahan tersebut.
 
@@ -64,7 +64,7 @@ jam hemat = (error per entri log lama - log template) x entri per bulan x 10 men
 - Definisi R01, minggu terakhir, tercile volume, rekap terkoreksi, dan 10 menit per error adalah asumsi project.
 - Fakta data pada rancangan hanya sebagian sesuai (error tersebar merata, R07 bulan pertama tidak terdeteksi, R01 recall rendah dengan definisi stok tersedia).
 - Proteksi sheet bukan keamanan penuh; validasi tidak menghalangi salin-tempel; rumus template dihitung ulang LibreOffice, bukan Excel.
-- Dashboard Excel belum diuji ke pembaca awam; slide presentasi tidak dibuat; data tidak di-commit; branch belum di-merge ke main.
+- Dashboard Excel belum diuji ke pembaca awam; slide presentasi tidak dibuat; data tidak di-commit.
 - Cek silang: 48 dari 48 cocok; uji template 16 dari 17.
 
 ## Menjalankan
